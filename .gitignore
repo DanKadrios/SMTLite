@@ -1,0 +1,17 @@
+﻿# build / binaries
+*.exe
+*.dll
+
+# node / python / caches
+node_modules/
+__pycache__/
+*.pyc
+
+# VS Code / OS
+.vscode/
+.DS_Store
+*.log
+
+# Project-specific
+input.txt
+graph.json

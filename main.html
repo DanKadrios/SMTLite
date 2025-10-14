@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>SMT-lite Battle Simulator</title>
+	<style>
+		body{font-family:Arial,Helvetica,sans-serif;background:#111;color:#eee;padding:16px}
+		#battle{display:flex;gap:20px;align-items:flex-start}
+		.actor{width:320px;padding:12px;border:1px solid #333;background:#161616}
+		.hpbar{height:18px;background:#333;border:1px solid #000;margin:6px 0}
+		.hpfill{height:100%;background:linear-gradient(#6fdb6f,#2ea02e);width:100%}
+		#moves button{margin:4px;padding:8px}
+		#log{margin-top:12px;height:200px;overflow:auto;background:#0b0b0b;padding:8px;border:1px solid #222}
+		header{display:flex;justify-content:space-between;align-items:center}
+		.small{font-size:0.9em;color:#ccc}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>SMT-lite: Battle Simulator</h1>
+		<div class="small">Prototype engine — simple mechanics</div>
+	</header>
+
+	<div id="battle">
+		<div class="actor" id="player">
+			<h2 id="pname">Player</h2>
+			<div>HP <span id="php">100</span>/<span id="pmaxhp">100</span></div>
+			<div class="hpbar"><div id="phpfill" class="hpfill"></div></div>
+			<div id="pmore"></div>
+		</div>
+
+		<div class="actor" id="enemy">
+			<h2 id="ename">Enemy</h2>
+			<label for="enemySelect" style="font-size:0.9em;color:#ccc">Choose enemy:</label>
+			<select id="enemySelect" style="margin-bottom:8px"></select>
+			<button id="setEnemyBtn" style="margin-left:8px;padding:4px 8px">Set Opponent</button>
+			<div>HP <span id="ehp">100</span>/<span id="emaxhp">100</span></div>
+			<div class="hpbar"><div id="ehpfill" class="hpfill"></div></div>
+			<div id="emore"></div>
+		</div>
+	</div>
+
+	<section id="controls">
+		<h3>Your Moves</h3>
+		<div id="moves"></div>
+		<button id="reset">New Battle</button>
+	</section>
+
+	<section>
+		<h3>Battle Log</h3>
+		<div id="log"></div>
+	</section>
+
+	<script type="module" src="src/main.js"></script>
+</body>
+</html>
